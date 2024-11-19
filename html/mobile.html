@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="mobileStyles/styles.css" />
+    <script defer src="mobileScripts/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto+Flex:opsz@8..144&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="settings-form">
+        <div class="settings-left">
+          <div class="settings-left-container">
+            <ul class="settings-selection">
+              <li class="settings-item" id="general">
+                <p>General</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="settings-right">
+          <div class="settings-right-container">
+            <p>Change Measurement</p>
+            <select name="units" id="units">
+              <option value="Imperial">Imperial</option>
+              <option value="Metric">Metric</option>
+            </select>
+            <p>Confirm?</p>
+            <div class="svgs">
+              <div class="checkmark">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="25"
+                  viewBox="0 0 28 25"
+                  fill="none"
+                >
+                  <path
+                    d="M22.4183 0L20.0051 2.77451L10.2824 13.4872L7.44946 10.4815L4.93133 7.70698L0 13.1404L2.51813 15.9149L7.76423 21.6952L10.1774 24.4697L12.6956 21.6952L24.9365 8.20794L27.4546 5.43342L22.4183 0Z"
+                    fill="black"
+                    id="check"
+                  />
+                </svg>
+              </div>
+              <div class="closemark">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="25"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                >
+                  <path
+                    d="M4.44418 0L0 4.39525L2.26937 6.63963L7.87975 12.2818L2.26937 17.8304L0 19.9812L4.44418 24.47L6.71354 22.2256L12.4185 16.5835L18.0289 22.2256L20.2037 24.47L24.7424 19.9812L22.473 17.8304L16.7681 12.2818L22.473 6.63963L24.7424 4.39525L20.2037 0L18.0289 2.24438L12.4185 7.79299L6.71354 2.24438L4.44418 0Z"
+                    fill="black"
+                    id="close"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="app">
+        <div class="navbar">
+          <div class="hamburger-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="41"
+              height="42"
+              viewBox="0 0 25 40"
+              fill="none"
+            >
+              <path
+                d="M0 0V4.87805H33V0H0ZM0 14.4878V19.3659H33V14.4878H0ZM0 29.122V34H33V29.122H0Z"
+                fill="white"
+                class="hamburger"
+              />
+            </svg>
+          </div>
+
+          <div class="search-container">
+            <div class="search-bar closed" id="search">
+              <input
+                type="text"
+                id="search-bar"
+                placeholder="Enter a place here"
+              />
+            </div>
+            <div class="search-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="39"
+                height="42"
+                viewBox="0 0 25 40"
+                fill="none"
+              >
+                <path
+                  d="M13.4408 0.0421187C6.02917 0.0421187 0 6.65475 0 14.7837C0 22.9126 6.02917 29.5252 13.4408 29.5252C15.7066 29.5252 17.9339 28.9355 19.8156 27.7983C19.9663 27.9973 20.1334 28.1806 20.3148 28.3459L24.1551 32.5577C24.5097 32.9954 24.9421 33.3489 25.4257 33.5966C25.9094 33.8443 26.4341 33.9809 26.9677 33.9981C27.5013 34.0154 28.0324 33.9128 28.5285 33.6967C29.0247 33.4807 29.4753 33.1557 29.8527 32.7417C30.2302 32.3277 30.5265 31.8335 30.7235 31.2894C30.9205 30.7452 31.014 30.1627 30.9983 29.5775C30.9826 28.9923 30.858 28.4168 30.6322 27.8863C30.4063 27.3558 30.084 26.8816 29.685 26.4927L25.8448 22.2808C25.6577 22.0755 25.4518 21.8921 25.2303 21.7332C26.2672 19.6694 26.92 17.2687 26.92 14.7415C26.92 6.61263 20.8909 0 13.4792 0L13.4408 0.0421187ZM13.4408 4.25399C18.7787 4.25399 23.0414 8.92916 23.0414 14.7837C23.0414 17.5635 22.1197 20.1327 20.5068 22.0281C20.4684 22.0702 20.43 22.1123 20.3916 22.1544C20.2103 22.3197 20.0431 22.503 19.8924 22.702C18.2027 24.3867 15.8986 25.3554 13.4024 25.3554C8.06449 25.3554 3.80183 20.6803 3.80183 14.8258C3.80183 8.97128 8.06449 4.29611 13.4024 4.29611L13.4408 4.25399Z"
+                  fill="white"
+                  class="search"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="today">
+          <div class="date">
+            <p>In <span id="place">Delaware</span></p>
+            <p>
+              <span id="day">Mon,</span>
+              <br />
+              <span id="date">14</span>
+              <span id="month">December</span>
+            </p>
+          </div>
+
+          <div class="current">
+            <span id="condition">Sunny</span>
+            <br />
+            <span class="value" id="temp">24</span>°<span id="meas">F</span
+            ><br />
+          </div>
+        </div>
+
+        <div class="days">
+          <div class="sun day">
+            <span id="fix" class="bold">SUN</span>
+            <div class="statdiv">
+              <span class="status">Snow, Rain, Overcast,over yes</span>
+            </div>
+            <div class="sunsvg">
+              <img
+                height="40px"
+                class="weatherimg"
+                src="WeatherIcons/showers-day.svg"
+              />
+            </div>
+            <p>
+              <span class="maxtemp bold"
+                ><span class="value-max">36</span>°
+              </span>
+              <span class="mintemp"><span class="value-min">17</span>°</span>
+            </p>
+          </div>
+          <div class="mon day">
+            <span id="fix" class="bold">MON</span>
+            <div class="statdiv">
+              <span class="status">Snow, Rain, Overcast,over yes</span>
+            </div>
+            <div class="sunsvg">
+              <img
+                height="40px"
+                class="weatherimg"
+                src="WeatherIcons/showers-day.svg"
+              />
+            </div>
+            <p>
+              <span class="maxtemp bold"
+                ><span class="value-max">36</span>°
+              </span>
+              <span class="mintemp"><span class="value-min">17</span>°</span>
+            </p>
+          </div>
+          <div class="tue day">
+            <span id="fix" class="bold">TUE</span>
+            <div class="statdiv">
+              <span class="status">Snow, Rain, Overcast,over yes</span>
+            </div>
+            <div class="sunsvg">
+              <img
+                height="40px"
+                class="weatherimg"
+                src="WeatherIcons/rain.svg"
+              />
+            </div>
+            <p>
+              <span class="maxtemp bold"
+                ><span class="value-max">36</span>°
+              </span>
+              <span class="mintemp"><span class="value-min">17</span>°</span>
+            </p>
+          </div>
+          <div class="wed day">
+            <span id="fix" class="bold">WED</span>
+            <div class="statdiv">
+              <span class="status">Snow, Rain, Overcast,over yes</span>
+            </div>
+            <div class="sunsvg">
+              <img
+                height="40px"
+                class="weatherimg"
+                src="WeatherIcons/showers-day.svg"
+              />
+            </div>
+            <p>
+              <span class="maxtemp bold"
+                ><span class="value-max">36</span>°
+              </span>
+              <span class="mintemp"><span class="value-min">17</span>°</span>
+            </p>
+          </div>
+          <div class="thu day">
+            <span id="fix" class="bold">THU</span>
+            <div class="statdiv">
+              <span class="status">Snow, Rain, Overcast,over yes</span>
+            </div>
+            <div class="sunsvg">
+              <img
+                height="40px"
+                class="weatherimg"
+                src="WeatherIcons/showers-day.svg"
+              />
+            </div>
+            <p>
+              <span class="maxtemp bold"
+                ><span class="value-max">36</span>°
+              </span>
+              <span class="mintemp"><span class="value-min">17</span>°</span>
+            </p>
+          </div>
+          <div class="fri day">
+            <span id="fix" class="bold">FRI</span>
+            <div class="statdiv">
+              <span class="status">Snow, Rain, Overcast,over yes</span>
+            </div>
+            <div class="sunsvg">
+              <img
+                height="40px"
+                class="weatherimg"
+                src="WeatherIcons/showers-day.svg"
+              />
+            </div>
+            <p>
+              <span class="maxtemp bold"
+                ><span class="value-max">36</span>° </span
+              ><span class="mintemp"><span class="value-min">17</span>°</span>
+            </p>
+          </div>
+          <div class="sat day">
+            <span id="fix" class="bold">SAT</span>
+            <div class="statdiv">
+              <span class="status">Snow, Rain, Overcast,over yes</span>
+            </div>
+            <div class="sunsvg">
+              <img
+                height="40px"
+                class="weatherimg"
+                src="WeatherIcons/showers-day.svg"
+              />
+            </div>
+            <p>
+              <span class="maxtemp bold"
+                ><span class="value-max">36</span>°
+              </span>
+              <span class="mintemp"><span class="value-min">17</span>°</span>
+            </p>
+          </div>
+        </div>
+        <div class="info">
+          <p>
+            Pressure
+            <span class="air">10 mb</span>
+          </p>
+          <p>
+            Humidity
+            <span class="air">66%</span>
+          </p>
+          <p>
+            Wind
+            <span class="air">
+              <span class="value">4</span>
+              <span class="unit">mi/h</span>
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!--
+<div class="settings-form">
+      <div class="settings-left">
+        <div class="settings-left-container">
+          <ul class="settings-selection">
+            <li class="settings-item" id="general">
+              <p>General</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="settings-right">
+        <div class="settings-right-container">
+          <p>Change Measurement</p>
+          <select name="units" id="units">
+            <option value="Imperial">Imperial</option>
+            <option value="Metric">Metric</option>
+          </select>
+          <p>Confirm?</p>
+          <div class="svgs">
+            <div class="checkmark">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="25"
+                viewBox="0 0 28 25"
+                fill="none"
+              >
+                <path
+                  d="M22.4183 0L20.0051 2.77451L10.2824 13.4872L7.44946 10.4815L4.93133 7.70698L0 13.1404L2.51813 15.9149L7.76423 21.6952L10.1774 24.4697L12.6956 21.6952L24.9365 8.20794L27.4546 5.43342L22.4183 0Z"
+                  fill="black"
+                  id="check"
+                />
+              </svg>
+            </div>
+            <div class="closemark">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+              >
+                <path
+                  d="M4.44418 0L0 4.39525L2.26937 6.63963L7.87975 12.2818L2.26937 17.8304L0 19.9812L4.44418 24.47L6.71354 22.2256L12.4185 16.5835L18.0289 22.2256L20.2037 24.47L24.7424 19.9812L22.473 17.8304L16.7681 12.2818L22.473 6.63963L24.7424 4.39525L20.2037 0L18.0289 2.24438L12.4185 7.79299L6.71354 2.24438L4.44418 0Z"
+                  fill="black"
+                  id="close"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    -->
+  </body>
+</html>

@@ -1,0 +1,300 @@
+/*----------MOBILE---------*/
+:root {
+  --arrow-bg: rgba(83, 83, 83, 0.3);
+  --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+  --option-bg: rgb(255, 255, 255);
+  --select-bg: rgba(92, 92, 92, 0.2);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: url("../../images/Mobile/clear.jpg"),
+    lightgray 50% / cover no-repeat;
+  background-position: center;
+  background-color: #333333;
+  overflow-y: hidden;
+}
+
+.container {
+  background-color: transparent;
+  margin: auto;
+}
+
+/*-------------SETTINGS----------------*/
+.settings-form {
+  display: none;
+  margin-left: 6%;
+  margin-top: 50%;
+  background-color: white;
+  height: 30%;
+  justify-content: center;
+  box-shadow: -15px 3px 20px 9px rgba(0, 0, 0, 0.25);
+}
+
+.settings-left-container {
+  padding: 10px;
+}
+
+.settings-selection {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.settings-item:hover {
+  color: #585858;
+  cursor: pointer;
+}
+
+.settings-right-container {
+  border-left: 2px solid black;
+  padding: 20px;
+}
+
+.checkmark:hover {
+  cursor: pointer;
+  #check {
+    fill: green;
+  }
+}
+
+.closemark:hover {
+  cursor: pointer;
+  #close {
+    fill: red;
+  }
+}
+
+.svgs {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.settings-right-container #units {
+  /* Reset */
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  width: 15rem;
+  padding: 1rem 4rem 1rem 1rem;
+  background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+    linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+  color: black;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  /* Remove IE arrow */
+  &::-ms-expand {
+    display: none;
+  }
+  /* Remove focus outline */
+  &:focus {
+    outline: none;
+  }
+  /* <option> colors */
+  option {
+    color: inherit;
+    background-color: var(--option-bg);
+  }
+}
+/*-------------END OF SETTINGS-------------*/
+
+
+.app {
+  display: block;
+  background: rgba(217, 217, 217, 0.15);
+  backdrop-filter: blur(3.5px);
+  height: 96vh;
+  border-radius: 5px;
+  background: rgba(217, 217, 217, 0.15);
+  box-shadow: 0px 4px 15px 7px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3.5px);
+}
+
+.uparrow, .downarrow {
+  display: inline;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  padding-top: 10px;
+}
+
+.search-container {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.hamburger-container {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.search-icon:active,
+.hamburger-container:active {
+  .search,
+  .hamburger {
+    fill: #585858;
+  }
+}
+
+.search-icon:hover,
+  .hamburger-container:hover {
+    .search,
+    .hamburger {
+      fill: #585858;
+    }
+    cursor: pointer;
+  }
+
+  .search-bar {
+    display: inline-block;
+    transition-property: all;
+    transition-duration: 1.5s;
+    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    display: inline-block;
+    overflow-x: hidden;
+    /* Put to exact value of search bar or the animation will take a while to close.*/
+    max-width: 200px; /* approximate max width */
+  }
+
+  .search-icon {
+    display: inline-block;
+  }
+
+  #search-bar {
+    width: 200px;
+    max-width: 200px;
+    background-color: transparent;
+    font-size: 1em;
+    padding: 0 0 0.3em 0.62em;
+    border: none;
+    border-bottom: 2px solid #585858;
+    outline: none;
+    color: #a3a3a3;
+  }
+  #search-bar::placeholder {
+    color: #a3a3a3;
+    opacity: 1; /* Firefox*/
+  }
+
+  #search-bar::-webkit-input-placeholder {
+    color: #a3a3a3;
+  }
+
+  #search-bar:active,
+  #search-bar:hover {
+    border-color: #333333;
+  }
+
+  .search-bar.closed {
+    max-width: 0;
+  }
+
+
+.today {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.date {
+  margin: auto;
+  margin-bottom: 5%;
+  font-size: 32px;
+}
+
+.current {
+  margin-bottom: 10%;
+  font-size: 32px;
+}
+
+.current #temp {
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.days {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+  padding: 0 1rem;
+  justify-content: space-between;
+  overflow-x: scroll;
+  border-top: #333333 solid 2px;
+  border-bottom: #333333 solid 2px;
+}
+
+.day {
+  display: table;
+  padding-top: 2%;
+  text-align: center;
+  width: 70px;
+  margin-right: 10%;
+  background-color: transparent;
+}
+
+.day p,
+img {
+  display: table-row;
+  margin: auto;
+  text-align: center;
+}
+
+.status {
+  color: #000;
+  font-size: 0.8em;
+}
+
+.current #condition {
+  font-weight: bold;
+}
+
+#value-max {
+  color: #000;
+  font-weight: bold;
+}
+
+.value-max {
+  color: #000;
+  font-weight: bold;
+}
+
+.info {
+  margin-left: 20px;
+}
+
+.info p {
+  color: #000000;
+}
+
+.info .air {
+  color: #000;
+  font-weight: bold;
+}
+.sunsvg {
+  display: table-row;
+  margin: auto;
+}
+
+.statdiv {
+  margin: auto;
+  width: 110px;
+  max-width: 110px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  height: 54.67px;
+  max-height: 54.67px;
+}
+
+/*--------------END OF MOBILE------------*/

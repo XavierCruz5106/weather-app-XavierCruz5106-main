@@ -1,0 +1,390 @@
+:root {
+  --arrow-bg: rgba(83, 83, 83, 0.3);
+  --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+  --option-bg: rgb(255, 255, 255);
+  --select-bg: rgba(92, 92, 92, 0.2);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  background-position: center;
+  background-color: #333333;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: unset;
+}
+
+/*Average Desktop*/
+@media (min-width: 48em) {
+  body {
+    background: url("../images/clear.jpg"), lightgray 50% / cover no-repeat;
+    background-position: center;
+  }
+
+  .container {
+    background-color: transparent;
+    margin: auto;
+  }
+
+  .settings-form {
+    display: none;
+    background-color: white;
+    height: 30%;
+    justify-content: center;
+    box-shadow: -15px 3px 20px 9px rgba(0, 0, 0, 0.25);
+  }
+
+  .settings-left-container {
+    padding: 10px;
+  }
+
+  .settings-selection {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  .settings-item:hover {
+    color: #585858;
+    cursor: pointer;
+  }
+
+  .settings-right-container {
+    border-left: 2px solid black;
+    padding: 20px;
+  }
+
+  .checkmark:hover {
+    cursor: pointer;
+    #check {
+      fill: green;
+    }
+  }
+
+  .closemark:hover {
+    cursor: pointer;
+    #close {
+      fill: red;
+    }
+  }
+
+  .svgs {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+  }
+
+  .settings-right-container #units {
+    /* Reset */
+    appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    /* Personalize */
+    width: 20rem;
+    padding: 1rem 4rem 1rem 1rem;
+    background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+      linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+    color: black;
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    /* Remove IE arrow */
+    &::-ms-expand {
+      display: none;
+    }
+    /* Remove focus outline */
+    &:focus {
+      outline: none;
+    }
+    /* <option> colors */
+    option {
+      color: inherit;
+      background-color: var(--option-bg);
+    }
+  }
+
+  .app {
+    display: inline-flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .weatherapp-left {
+    border-radius: 90px 0px 0px 90px;
+    background: rgba(217, 217, 217, 0.15);
+    backdrop-filter: blur(6px);
+    box-shadow: -15px 3px 20px 9px rgba(0, 0, 0, 0.25);
+    height: 534px;
+    flex-shrink: 0;
+    width: 480px;
+
+    transition-property: all;
+    transition-duration: 1.5s;
+    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    max-width: 480px; /* approximate max width */
+  }
+
+  .weatherapp-left.closed {
+    width: 237.438px;
+    max-width: 237.438px;
+  }
+
+  .weatherapp-right {
+    width: 593.604px;
+    height: 534px;
+    border-radius: 0px 90px 90px 0px;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 23px 4px 20px 9px rgba(0, 0, 0, 0.25);
+    flex-shrink: 0;
+  }
+
+  .nav {
+    margin: auto;
+    display: flex;
+    padding-top: 9%;
+    justify-content: space-between;
+    width: 60%;
+    height: 50px;
+  }
+
+  .search-container {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+
+  .hamburger-container {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+
+  .search-icon:hover,
+  .hamburger-container:hover {
+    .search,
+    .hamburger {
+      fill: #585858;
+    }
+    cursor: pointer;
+  }
+
+  .search-bar {
+    display: inline-block;
+    transition-property: all;
+    transition-duration: 1.5s;
+    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    display: inline-block;
+    overflow-x: hidden;
+    /* Put to exact value of search bar or the animation will take a while to close.*/
+    max-width: 200px; /* approximate max width */
+  }
+
+  .search-icon {
+    display: inline-block;
+  }
+
+  #search-bar {
+    width: 200px;
+    max-width: 200px;
+    background-color: transparent;
+    font-size: 1em;
+    padding: 0 0 0.3em 0.62em;
+    border: none;
+    border-bottom: 2px solid #585858;
+    outline: none;
+    color: white;
+  }
+  #search-bar::placeholder {
+    color: white;
+    opacity: 1; /* Firefox*/
+  }
+
+  #search-bar::-webkit-input-placeholder {
+    color: white;
+  }
+
+  #search-bar:active,
+  #search-bar:hover {
+    border-color: #333333;
+  }
+
+  .search-bar.closed {
+    max-width: 0;
+  }
+
+  .outer-container {
+    display: flex;
+    justify-content: center;
+    height: 90%;
+  }
+
+  .inner-container {
+    align-self: flex-end;
+    padding-bottom: 40px;
+  }
+
+  .temp {
+    color: white;
+    color: #fff;
+    text-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    font-size: 4em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+  }
+
+  .grid {
+    margin-top: -3%;
+    display: grid;
+    grid-template-columns: 50% 15%;
+    grid-gap: 30%;
+  }
+
+  .info {
+    padding-top: 28%;
+  }
+
+  .info p {
+    color: #585858;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .bold {
+    color: #2d2d2d;
+    font-weight: 700;
+  }
+
+  .date {
+    padding-left: 13%;
+    padding-top: 0;
+  }
+
+  .date p {
+    color: #000;
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .place {
+    padding-left: 7%;
+  }
+
+  .place #city {
+    margin-top: 1%;
+    flex-shrink: 0;
+    color: #000;
+    font-family: Inter;
+    font-size: 3em;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 0%;
+  }
+
+  .place #country {
+    margin-top: -1.5%;
+    flex-shrink: 0;
+    color: #585858;
+    font-family: Inter;
+    font-size: 1.5em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0%;
+  }
+
+  .place #region {
+    flex-shrink: 0;
+    color: #585858;
+    font-family: Inter;
+    padding-bottom: 15px;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0%;
+  }
+
+  #cloud {
+    height: 1.5em;
+    padding-bottom: 7px;
+    margin-bottom: 6px;
+  }
+
+  .days {
+    margin-top: 7%;
+    margin-left: 3%;
+    display: flex;
+    justify-content: space-between;
+    width: 92%;
+  }
+
+  #fix {
+    display: block;
+  }
+
+  .day {
+    display: table;
+    padding-top: 2%;
+    text-align: center;
+    width: 100px;
+    min-height: 12em;
+    height: 203.49px;
+    max-height: 12em;
+  }
+
+  .day p {
+    color: #585858;
+  }
+
+  .day p,
+  img {
+    display: table-row;
+    margin: auto;
+    text-align: center;
+  }
+
+  .status {
+    color: #585858;
+    font-size: 0.8em;
+  }
+
+  .sunsvg {
+    display: table-row;
+    margin: auto;
+  }
+
+  .statdiv {
+    margin: auto;
+    width: 62.53px;
+    max-width: 62.53px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    height: 54.67px;
+    max-height: 54.67px;
+  }
+
+  .errorbox {
+    display: none;
+    color: red;
+  }
+}
+
+/*Bigger Desktop*/
+@media (min-width: 160em) {
+  body {
+    background: url("../images/clearBig.jpg"), lightgray 50% / cover no-repeat;
+    background-position: center;
+  }
+}

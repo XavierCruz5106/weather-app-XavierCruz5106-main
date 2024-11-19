@@ -1,0 +1,6 @@
+Weather Types
+thunder
+hail
+fog
+sleet
+wind
